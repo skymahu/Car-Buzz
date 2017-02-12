@@ -1,0 +1,78 @@
+﻿<ion-view view-title="List of Vehicle" align-title="center" ng-init="GetPurchaseCars()">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon button-clear ion-navicon"></button>
+    </ion-nav-buttons>
+
+
+    <ion-content class="padding">
+        <a href="#" class="button button-block button-energized">
+            <i class="icon ion-android-funnel"></i>
+            Filter
+        </a>
+        <div class="card">
+            <div class="list">
+                <div class="row">
+                    <div class="col col-10">
+
+                    </div>
+                    <div class="col col-80">
+
+                    </div>
+                    <div class="col col-10">
+
+                    </div>
+                </div>
+
+                <label class="item item-input item-select">
+                    Varient
+                    <select ng-model="search.val.EngineType">
+                        <option>Petrol</option>
+                        <option selected>Diesel</option>
+                        <option>CNG</option>
+                    </select>
+                </label>
+
+            </div>
+        </div>
+        <div class="list">
+
+            <div class="bar bar-header item-input-inset">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input type="text" placeholder="Place From" ng-model="search.val.PlaceFrom">
+                </label>
+            </div>
+            <!--<div class="bar bar-header item-input-inset">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input type="text" placeholder="Engine_Type" ng-model="search.val.Enginetype">
+                </label>
+            </div>-->
+
+            <ion-list>
+
+                <a class="item item-avatar" ng-repeat="sites in purchasecarsVarient | filter : search ">
+                    <!--<img src="img/location.png" ng-if="sites.Status == true" />
+                <a ng-if="!siteallot" class="item item-avatar" ng-click="GoSite(sites)" ng-repeat="sites in Sites | filter : search ">
+
+        <img src="img/notlocate.png" ng-if="sites.Status == false" />-->
+                    <h2>                     
+                        <p>Year of Engine_type: {{sites.val.EngineType}}</p>
+                        <p>Year of Price: {{sites.val.Price}}</p>
+                        <p>Remark: {{sites.val.Remark}} </p>
+                        <p>Place From: {{sites.val.PlaceFrom}} </p>
+                    </h2>
+                    <!--<p>Click for More Detail's:  </p>-->
+                </a>
+            </ion-list>
+        </div>
+    </ion-content>
+
+
+
+</ion-view>
+<style>
+    #login-content {
+        background: #41B1C8;
+    }
+</style>

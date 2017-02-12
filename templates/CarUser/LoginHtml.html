@@ -1,0 +1,117 @@
+﻿<ion-view hide-nav-bar="true">
+    <ion-content class="padding  full-height" style="background-color:#292526;margin-bottom:0px !important;">
+        <div class="text-center" style="margin-top:50px;">
+            <span class="circle"><img src="img/logo1.png"></span>
+        </div>
+        <br/>
+        <!--<div class="row">
+            <div class="col text-center">
+                <img src="img/logo1.png" style="height:auto;width:30%;padding-top:10px;">
+            </div>
+        </div>-->
+
+        <form name="authorizationForm" novalidate="" ng-submit="LogIn(authorizationForm)">
+
+            <div class="list">
+
+                <label style="border-radius: 20px;" class="item item-input" ng-class="{ 'has-errors' : authorizationForm.email.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.email.$valid && authorizationForm.$submitted}">
+
+                    <input type="email" name="email" ng-model="User.Email" required placeholder="Email">
+                </label>
+                <div class="error-container" ng-show="authorizationForm.email.$error && authorizationForm.$submitted" ng-messages="authorizationForm.email.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="email">
+                        <i class="ion-information-circled"></i>
+                        Your email address is invalid
+                    </div>
+                </div>
+                 
+                <br/>
+
+                <label style="border-radius: 20px;" class="item item-input" ng-class="{ 'has-errors' : authorizationForm.password.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.password.$valid  && authorizationForm.$submitted}">
+
+                    <input type="password" name="password" ng-model="User.Password" ng-minlength="8" ng-maxlength="20" required placeholder="Password">
+                </label>
+
+                <div class="error-container last-error-container" ng-show="authorizationForm.password.$error && authorizationForm.$submitted" ng-messages="authorizationForm.password.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 8 characters!
+                    </div>
+                </div>
+
+            </div>
+
+            <button style="border-radius: 20px;" name="submit" class="button button-block button-login button-energized" type="submit">
+                Sign In
+            </button>
+
+        </form>
+        <p style="text-align:center;color: #FCEF0D;">
+            Dont Have an Account?<a style="text-decoration:none;font-weight:100; color:white;" href="#/register">
+                Create
+            </a>
+        </p>
+        <p style="text-align:center;color: #FCEF0D;">
+            Forgot?<a style="text-decoration:none;font-weight:100; color:white;" href="#/app/forgetpass">
+                Recover Here
+            </a>
+        </p>
+
+
+    </ion-content>
+</ion-view>
+<style>
+    .button-login {
+        border-color: transparent;
+        background-color: #38B4D0;
+        color: #fff;
+    }
+
+    .vertical-center {
+        min-height: 100%;
+        /* Fallback for vh unit */
+        min-height: 60vh;
+        /* You might also want to use
+                        'height' property instead.
+
+                        Note that for percentage values of
+                        'height' or 'min-height' properties,
+                        the 'height' of the parent element
+                        should be specified explicitly.
+
+                        In this case the parent of '.vertical-center'
+                        is the <body> element */
+        /* Make it a flex container */
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        /* Align the bootstrap's container vertically */
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        /* In legacy web browsers such as Firefox 9
+     we need to specify the width of the flex container */
+        width: 100%;
+        /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+     hence the bootstrap's container won't be aligned to the center anymore.
+
+     Therefore, we should use the following declarations to get it centered again */
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+</style>

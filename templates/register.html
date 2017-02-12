@@ -1,0 +1,165 @@
+<ion-view view-title="Create An Account" align-title="center">
+    <ion-content class="padding" style="margin-top:50px;">
+
+        <form name="authorizationForm" novalidate="" ng-submit="Register(authorizationForm)">
+            <div class="list">
+
+                <!--USERNAME LABEL AND TEXTBOX-->
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.username.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.username.$valid && authorizationForm.$submitted}">
+                    <input placeholder="UserName" type="text" name="username" ng-model="User.UserName" ng-minlength="5" ng-maxlength="20" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.username.$error && authorizationForm.$submitted" ng-messages="authorizationForm.username.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 5 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 20 characters!
+                    </div>
+                </div>
+
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.email.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.email.$valid && authorizationForm.$submitted}">
+                    <input placeholder="Email" type="email" name="email" ng-model="User.Email" ng-minlength="5" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.email.$error && authorizationForm.$submitted" ng-messages="authorizationForm.email.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                </div>
+
+                <!--MobileNo ID LABEL AND TEXTBOX-->
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.MobileNo.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.MobileNo.$valid && authorizationForm.$submitted}">
+
+                    <input type="number" name="MobileNo" ng-model="User.MobileNo" required placeholder="MobileNo">
+                </label>
+                <div class="error-container" ng-show="authorizationForm.MobileNo.$error && authorizationForm.$submitted" ng-messages="authorizationForm.MobileNo.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 10 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 10 characters!
+                    </div>
+                    <div class="error" ng-message="MobileNo">
+                        <i class="ion-information-circled"></i>
+                        Your MobileNo address is invalid
+                    </div>
+
+                </div>
+
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.WAnumber.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.WAnumber.$valid && authorizationForm.$submitted}">
+
+                    <input placeholder="Whatsapp Number" type="number" name="WAnumber" ng-model="User.WAnumber" ng-minlength="5" ng-maxlength="20" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.WAnumber.$error && authorizationForm.$submitted" ng-messages="authorizationForm.WAnumber.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 10 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 10 characters!
+                    </div>
+                </div>
+
+
+                <!--PASSWORD LABEL AND ERROR -->
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.password.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.password.$valid  && authorizationForm.$submitted}">
+
+                    <input type="password" name="password" ng-model="User.Password" ng-minlength="8" ng-maxlength="20" required
+                           placeholder="Password">
+                </label>
+
+                <div class="error-container last-error-container" ng-show="authorizationForm.password.$error && authorizationForm.$submitted" ng-messages="authorizationForm.password.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 8 characters!
+                    </div>
+                </div>
+
+                <!--CONFIRM PASSWORD-->
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.cnfpassword.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.cnfpassword.$valid  && authorizationForm.$submitted}">
+
+                    <input type="password" name="cnfpassword" ng-model="User.ConfirmPassword"
+                           ng-match="User.Password"
+                           ng-minlength="8" ng-maxlength="20" required placeholder="Confirm Password">
+                </label>
+
+                <div class="error-container last-error-container" ng-show="authorizationForm.cnfpassword.$error && authorizationForm.$submitted" ng-messages="authorizationForm.cnfpassword.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="match">
+                        <i class="ion-information-circled"></i>
+                        Does not match
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 8 characters!
+                    </div>
+                </div>
+
+                <ion-checkbox required name="isChecked" ng-model="isChecked">I agree to the Terms & Conditions</ion-checkbox>
+                <div class="error-container last-error-container" ng-show="authorizationForm.isChecked.$error && authorizationForm.$submitted" ng-messages="authorizationForm.isChecked.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button name="submit" class="button button-block button-stable button-energized" type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+
+
+
+    </ion-content>
+  
+	<div class="tabs tabs-icon-top">
+		<a ui-sref="login" class="tab-item">
+			<i class="icon ion-log-in"></i>
+				Login
+				</a>
+		<!-- <a class="tab-item">
+			<i class="icon ion-star"></i>
+				Favorites
+			</a> -->
+		<a href="#/register" class="tab-item">
+			<i class="icon ion-ios-list-outline"></i>
+			Register
+		</a>
+	</div>
+
+
+</ion-view>
+<style>
+    #login-content {
+        background: #41B1C8;
+    }
+</style>

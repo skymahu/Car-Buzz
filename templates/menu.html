@@ -1,0 +1,53 @@
+<ion-side-menus cache-view="false" >
+
+    <ion-side-menu-content> 
+        <ion-nav-bar class=" bar-light nav-title-slide-ios7">
+    <!--  <ion-nav-back-button class="button-clear"></ion-nav-back-button>-->
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+
+        <!-- Sidebar Content -->
+        <ion-content class="gem-sidebar dark">
+            <!-- Profile Box - Extends ionic's .row -->
+            <div class="row gem-sidebar-profile-box" style="background: #292526;">
+                <!-- Profile Thumb -->
+                <div class="col col-25">
+                    <!--<img class="gem-profile-image" ng-href="{{User.UserDetail.Image}}" ng-show="currentReceipt.image" />-->
+                    <img class="gem-profile-image"
+                         ng-if="User.profile.Image" ng-src="{{User.profile.Image}}">
+                    <img ng-hide="User.profile.Image" src="img/default.jpg" class="gem-profile-image" alt="">
+                </div>
+                <!-- End Profile Thumb -->
+                <!-- Profile Name -->
+                <div class="col col-50">
+                    <h5 class="title">{{User.username}}</h5>
+                    <!--    <h6 class="action-links">Likes | Others</h6>-->
+                </div>
+                <!-- End Profile Name -->
+                <!-- Account Settings Icon -->
+                <div class="col col-25 gem-text-center">
+                    <i class="gem-profile-settings-icon icon ion-gear-b"></i>
+                </div>
+                <!-- End Account Settings Icon -->
+
+            </div>
+            <!-- End Profile Box -->
+            <ion-list>
+                <!--<ion-item class="item-ng-click" nav-clear menu-close ng-click="login()">Login</ion-item>
+                <ion-item nav-clear menu-close href="#/app/feed">Feed</ion-item>-->
+                <ion-item nav-clear menu-close href="#/app/home">Home</ion-item>
+                <ion-item nav-clear menu-close href="#/app/sale">Sale</ion-item>
+                <!--<ion-item nav-clear menu-close href="#/app/notification">Notification <span class="badge badge-assertive">{{NotificationCount}}</span></ion-item>-->
+
+                <ion-item nav-clear menu-close href="#/app/listsale">Sell Entry List </ion-item>
+                <ion-item nav-clear menu-close href="#/app/listpurchase">Purchase Entry List</ion-item>
+                <ion-item nav-clear menu-close href="#/app/purchase">Purchase & Exchange</ion-item>
+                <ion-item nav-clear menu-close ng-click="logout()">Logout</ion-item>
+
+            </ion-list>
+        </ion-content>
+        <!-- End sidemenu content -->
+    </ion-side-menu>
+</ion-side-menus>

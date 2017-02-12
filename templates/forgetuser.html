@@ -1,0 +1,89 @@
+ <ion-view view-title="Forgot usename">
+			<ion-content class="padding">
+
+
+<!-- <div class="navbar navbar-app navbar-absolute-top">
+    <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+        Forgot password
+    </div>
+
+</div> -->
+<!-- <div class="scrollable" ng-controller="PaypalController">
+    <div class="scrollable-header">
+    </div>
+    <div class="scrollable-content">
+        <div class="list-group">
+            <div class="list-group-item" style="border-bottom: none;">
+
+
+                <button ng-click="paypalbutton()" class="btn btn-primary btn-block" >buy now</button> -->
+                 <!--    <button ng-click="paypalbutton()" class="button button-block button-stable" >buy now</button>-->
+                <p style="text-align: left;color:white; font-weight: 100;">
+                    <h3 style="color:white;">Forgot your
+                        <br>
+                        Username </h3>
+                </p>
+
+               <!--  <div> -->
+                    <br>
+                    <p style="text-align:left;color:white; font-weight: 100;">
+                        Please enter your <b>email address </b>to
+                        <br>
+                        recover your Username
+                    </p>
+                    <form name="authorizationForm" novalidate="" ng-submit="forgetpass(authorizationForm)">
+                       
+                         <label class="item item-input">
+                                <!--<label>Email</label>-->
+                                <input id="username" name="username" type="text" ng-model="forget"  placeholder="Please enter your email address">
+                          </label>
+						  <br>
+                            <p style="text-align: left ;text-decoration:none; color: white; font-weight: 100;">
+                                We'll send you the link to recover
+                                <br>
+                                your username
+                            </p>
+
+                       
+
+                        <button type="submit" class="button button-block">
+                            Continue
+                        </button>
+
+                    </form>
+              <!--   </div>
+            </div>
+        </div>
+    </div> -->
+  <!--   <div class="scrollable-footer">
+        <div class="navbar navbar-app navbar-absolute-bottom">
+            <div class="btn-group justified">
+                <a href="#/signin" class="btn btn-navbar"><i class="fa fa-sign-in fa-navbar"></i> Login</a>
+                <a href="#/register" class="btn btn-navbar"><i class="fa fa-user fa-navbar"></i> register</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+ </ion-content>
+  
+	<div class="tabs tabs-icon-top">
+		<a ui-sref="signin" class="tab-item">
+			<i class="icon ion-person-stalker"></i>
+				 Login
+				</a>
+		<!--  <a class="tab-item">
+			<i class="icon ion-android-contact"></i>
+				Profile
+			</a>  -->
+		<a href="#/register" class="tab-item">
+			<i class="icon ion-android-contact"></i>
+			Register
+		</a>
+	</div>
+
+</ion-view>	
+<style>
+    #login-content {
+        background: #41B1C8;
+    }
+</style>

@@ -1,0 +1,214 @@
+ <ion-view view-title=" About You" ng-init="LoadProfile()">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon button-clear ion-navicon"></button><!--<span class="badge badge-assertive">0</span>-->
+    </ion-nav-buttons>
+    <ion-content class="padding">
+
+        <!-- <div class="navbar navbar-app navbar-absolute-top">
+            <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+                About Yourself
+            </div>
+            <div ng-include="'icons1.html'"></div>
+        </div> -->
+        <!-- <div class="scrollable" ng-controller="ProfileController"> -->
+        <!--  <div class="scrollable-header">
+         </div> -->
+        <div class="scrollable-content">
+            <div class="list-group">
+                <div class="list-group-item" style="border-bottom: none;">
+                    <!--<div style="margin-bottom:3%;">
+                                    <img src="img/profile.png" class="img-responsive" style="height:30%;width:30%; margin: 0 auto;">
+                                </div>-->
+                    <div style="margin-bottom: 3%; padding-bottom: 58px;">
+                        <div id="imgArea">
+                            <img id="image_upload_preview"
+                                 name="image_upload_preview"
+                                 src="./images/default.jpg"
+                                 ng-model="UserValue.Image"
+                                 ng-src="{{UserValue.Image}}">
+
+
+
+
+                            <div id="imgChange">
+                                <span>Upload an Image</span>
+                                <input type="file" accept="image/*" name="image_upload_file" id="inputFile" onchange="angular.element(this).scope().fileNameChanged(this)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form name="authorizationForm" novalidate="" ng-submit="profile(authorizationForm)">
+                            <div class="list">
+                                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.firstname.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.firstname.$valid && authorizationForm.$submitted}">
+
+                                    <input id="firstname" name="firstname" type="text" ng-model="UserValue.FirstName" placeholder="First Name" ng-minlength="5" ng-maxlength="20" required>
+                                </label>
+                                <div class="error-container" ng-show="authorizationForm.firstname.$error && authorizationForm.$submitted" ng-messages="authorizationForm.firstname.$error">
+                                    <div class="error" ng-message="required">
+                                        <i class="ion-information-circled"></i>
+                                        This field is required!
+                                    </div>
+                                    <div class="error" ng-message="minlength">
+                                        <i class="ion-information-circled"></i>
+                                        Minimum length of this field is 5 characters!
+                                    </div>
+                                    <div class="error" ng-message="maxlength">
+                                        <i class="ion-information-circled"></i>
+                                        Maximum length of this field is 20 characters!
+                                    </div>
+                                </div>
+
+
+                                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.middlename.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.middlename.$valid && authorizationForm.$submitted}">
+
+                                    <input id="middlename" name="middlename" type="text" ng-model="UserValue.MiddleName" placeholder="Middle Name" ng-minlength="5" ng-maxlength="20" required>
+                                </label>
+                                <div class="error-container" ng-show="authorizationForm.middlename.$error && authorizationForm.$submitted" ng-messages="authorizationForm.middlename.$error">
+                                    <div class="error" ng-message="required">
+                                        <i class="ion-information-circled"></i>
+                                        This field is required!
+                                    </div>
+                                    <div class="error" ng-message="minlength">
+                                        <i class="ion-information-circled"></i>
+                                        Minimum length of this field is 5 characters!
+                                    </div>
+                                    <div class="error" ng-message="maxlength">
+                                        <i class="ion-information-circled"></i>
+                                        Maximum length of this field is 20 characters!
+                                    </div>
+                                </div>
+
+
+                                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.lastname.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.lastname.$valid && authorizationForm.$submitted}">
+
+
+                                    <input id="username" name="lastname" type="text" ng-model="UserValue.LastName" placeholder="Last Name" ng-minlength="5" ng-maxlength="20" required>
+                                </label>
+                                <div class="error-container" ng-show="authorizationForm.lastname.$error && authorizationForm.$submitted" ng-messages="authorizationForm.lastname.$error">
+                                    <div class="error" ng-message="required">
+                                        <i class="ion-information-circled"></i>
+                                        This field is required!
+                                    </div>
+                                    <div class="error" ng-message="minlength">
+                                        <i class="ion-information-circled"></i>
+                                        Minimum length of this field is 5 characters!
+                                    </div>
+                                    <div class="error" ng-message="maxlength">
+                                        <i class="ion-information-circled"></i>
+                                        Maximum length of this field is 20 characters!
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br>
+
+
+
+
+                            <button name="submit" class="button button-block button-stable pull-right" type="submit">
+                                Next
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- </div> -->
+    </ion-content>
+
+    <!--<div class="tabs tabs-icon-top">
+        <a ui-sref="app.signin" class="tab-item">
+            <i class="icon ion-person-stalker"></i>
+                 Login
+                </a>
+        <!--  <a class="tab-item">
+            <i class="icon ion-android-contact"></i>
+                Profile
+            </a>
+        <a href="#/app/register" class="tab-item">
+            <i class="icon ion-android-contact"></i>
+            Register
+        </a>
+    </div>-->
+
+</ion-view>
+<style>
+    .image-upload > input {
+        display: none;
+    }
+    
+   #imgArea {
+    /*display: inline-block;*/
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    background-color: #eee;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    
+    }
+    
+    #imgArea img {
+    outline: medium none;
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    /*width: 100%;*/
+    }
+    
+    #imgChange {
+    background: url("./images/overlay.png") repeat scroll 0 0 rgba(0,0,0,0);
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    height: 30px;
+    left: 0;
+    line-height: 32px;
+    /*position: absolute;*/
+    text-align: center;
+    }  
+    
+   
+   
+   .abs {
+    position: relative;
+}
+
+.abs span.badge {
+    position: absolute;
+       top: -1.5em;
+    right: .5em;
+    background-color: #a00;
+}
+
+ 
+.abs span.badge1 {
+    position: absolute;
+           top: 0.1em;
+    right: -0.5em;
+    background-color: #a00;
+}
+ 
+ .badge1 {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #777;
+    border-radius: 10px;
+}
+
+
+    
+    
+</style>

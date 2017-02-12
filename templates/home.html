@@ -1,0 +1,156 @@
+ <ion-view view-title="Home" ng-init="NotificationListCount()">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon button-clear ion-navicon"></button><!--<a href="#/app/notification"><span class="badge badge-assertive">0</span></a>-->
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="secondary">
+        <a href="#/app/notification" class="button clear-button no-animation button-icon icon ion-android-notifications" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <span class="badge badge-assertive" style="
+    margin-top: -4px;
+    margin-left: -12px;float:right;">{{NotificationCount}}</span>
+        </a>
+        <button class="buttons button-icon ion-android-search" ng-click="showFilterBar()"></button>
+
+
+    </ion-nav-buttons>
+    <!--<ion-nav-buttons side="secondary">
+        <button class="buttons button-icon ion-home" ng-click="showFilterBar()"></button>
+    </ion-nav-buttons>-->
+    <ion-content class="padding">
+
+        <div class="text-center">
+            <img src="img/LSP.png" style="height:auto;width:30%; padding-top:50px;">
+        </div>
+
+        <!-- <div class="navbar navbar-app navbar-absolute-top"> -->
+        <!--<div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+            Home
+        </div>-->
+        <!-- <div ng-include="'homeicon.html'"></div>
+
+        </div>
+
+        <div ui-content-for="sidebar-right">
+            <div ng-include="'chat.html'" class="sidebar sidebar-right"></div>
+        </div>
+
+
+
+        <div class="navbar navbar-app navbar-absolute-bottom">
+            <div class="btn-group justified">
+                <a href="#/team" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> TEAM</a>
+                <a href="#/profile" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> PROFILE</a>
+                <div class="btn btn-navbar" ui-yield-to="navbarAction">
+                    <div ui-toggle="uiSidebarRight" class="btn">
+                        <i class="fa fa-comment"></i> Chat
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="scrollable" ng-controller="AccountController">
+            <div class="scrollable-header">
+            </div>
+            <div class="scrollable-content vertical-center">
+                <img src="img/LSP.png" class="img-responsive" style="height:30%">
+            </div>
+            <div class="scrollable-footer">
+            </div>
+        </div> -->
+    </ion-content>
+
+    <div class="tabs tabs-icon-top">
+        <a ui-sref="app.team" class="tab-item">
+            <i class="icon ion-person-stalker"></i>
+            Team
+        </a>
+        <a href="#/app/profile" class="tab-item">
+            <i class="icon ion-android-contact"></i>
+            Profile
+        </a>
+        <a href="#/app/chats" class="tab-item">
+            <i class="icon ion-chatbox-working"></i>
+            Share
+        </a>
+    </div>
+
+</ion-view>	
+
+<style>
+    .vertical-center {
+        min-height: 100%;
+        /* Fallback for vh unit */
+        min-height: 30vh;
+        /* You might also want to use
+                        'height' property instead.
+                        
+                        Note that for percentage values of
+                        'height' or 'min-height' properties,
+                        the 'height' of the parent element
+                        should be specified explicitly.
+  
+                        In this case the parent of '.vertical-center'
+                        is the <body> element */
+        /* Make it a flex container */
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        /* Align the bootstrap's container vertically */
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        /* In legacy web browsers such as Firefox 9
+     we need to specify the width of the flex container */
+        width: 100%;
+        /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+     hence the bootstrap's container won't be aligned to the center anymore.
+  
+     Therefore, we should use the following declarations to get it centered again */
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    .abs {
+    position: relative;
+}
+
+.abs span.badge {
+    position: absolute;
+       top: -1.5em;
+    right: .5em;
+    background-color: #a00;
+}
+
+ 
+.abs span.badge1 {
+    position: absolute;
+           top: 0.1em;
+    right: -0.5em;
+    background-color: #a00;
+}
+ 
+ .badge1 {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #777;
+    border-radius: 10px;
+}
+</style>

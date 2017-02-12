@@ -1,0 +1,220 @@
+﻿<ion-view view-title="Selling Detail" align-title="center">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon button-clear ion-navicon"></button>
+    </ion-nav-buttons>
+
+
+    <ion-content class="padding" ng-init="GetCars()">
+
+        <form name="authorizationForm" novalidate="" ng-submit="SaleFunction(authorizationForm)">
+            <div class="list">
+
+                <!--<label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.modal.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.modal.$valid && authorizationForm.$submitted}">
+
+                <input placeholder="Vehicle Modal" type="hidden" name="modal" ng-model="Sale.Modal" ng-minlength="5" ng-maxlength="200" required>
+            </label>-->
+
+                <div class="list">
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Vehicle Manufacturer
+                        </div>
+                        <select ng-change="GetModel()" ng-model="Sale.Car">
+                            <option value="{{car.Id}}" ng-repeat="car in Cars">{{car.val}}</option>
+
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Model
+                        </div>
+                        <select ng-model="Sale.CarModel">
+                            <option value="{{car.Id}}" ng-repeat="car in CarModel">{{car.val}}</option>
+                        </select>
+                    </label>
+                </div>
+                <label class="item item-input" >
+                    <span>Insurance:</span>&nbsp;&nbsp;
+                    <label class="toggle toggle-energized">
+                        <input type="checkbox" ng-model="Sale.Insurance">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                 </label>
+
+
+
+
+
+                <!--<ion-list>
+                    <ion-radio ng-model="Sale.Insurance" ng-value="'YES'">Yes</ion-radio>
+                    <ion-radio ng-model="Sale.Insurance" ng-value="'No'">No</ion-radio>
+                </ion-list>-->
+
+
+
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.vehicleno.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.vehicleno.$valid && authorizationForm.$submitted}">
+
+                    <input placeholder="Registration No" type="text" name="vehicleno" ng-model="Sale.VehicleNo" ng-minlength="5" ng-maxlength="10" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.vehicleno.$error && authorizationForm.$submitted" ng-messages="authorizationForm.vehicleno.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 5 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 10 characters!
+                    </div>
+                </div>
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.regyear.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.regyear.$valid && authorizationForm.$submitted}">
+                    <input placeholder="Registration Year" type="number" name="regyear" ng-model="Sale.Regyear" ng-minlength="4" ng-maxlength="4" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.vehicleno.$error && authorizationForm.$submitted" ng-messages="authorizationForm.vehicleno.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 5 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 10 characters!
+                    </div>
+                </div>
+
+
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.color.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.color.$valid && authorizationForm.$submitted}">
+                    <input placeholder="Vehicle Color" type="text" name="color" ng-model="Sale.Color" ng-minlength="2" ng-maxlength="10" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.color.$error && authorizationForm.$submitted" ng-messages="authorizationForm.color.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 5 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 10 characters!
+                    </div>
+                </div>
+
+                <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.varient.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.varient.$valid && authorizationForm.$submitted}">
+                    <input placeholder="Vehicle Varient" type="text" name="varient" ng-model="Sale.Varient" ng-minlength="5" ng-maxlength="10" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.varient.$error && authorizationForm.$submitted" ng-messages="authorizationForm.varient.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 5 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 10 characters!
+                    </div>
+                </div>
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Engine Type
+                </div>
+                <select ng-model="Sale.Enginetype">
+                  <option>Diesel</option>
+                  <option selected>Petrol</option>
+                  <option>CNG</option>
+                </select>
+              </label>
+
+                <label class="item item-input">
+                    <input placeholder="Year of Manufcturing" type="number" name="YOM" ng-model="Sale.YOM" ng-minlength="4" ng-maxlength="4" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.YOM.$error && authorizationForm.$submitted" ng-messages="authorizationForm.YOM.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 4 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 4 characters!
+                    </div>
+                </div>
+
+                <label class="item item-input">
+                    <input placeholder="KMS" type="text" name="KMS" ng-model="Sale.KMS" ng-minlength="2" ng-maxlength="200" required>
+                </label>
+                <div class="error-container" ng-show="authorizationForm.KMS.$error && authorizationForm.$submitted" ng-messages="authorizationForm.KMS.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+                    <div class="error" ng-message="minlength">
+                        <i class="ion-information-circled"></i>
+                        Minimum length of this field is 2 characters!
+                    </div>
+                    <div class="error" ng-message="maxlength">
+                        <i class="ion-information-circled"></i>
+                        Maximum length of this field is 200 characters!
+                    </div>
+                </div>
+
+
+
+                    <input placeholder="Insurance" type="hidden" name="Insurance" ng-model="Sale.Insurance">
+
+                <!--<label>Insurance:</label>
+            <ion-list>
+                <ion-radio ng-model="Sale.choice" ng-value="'Yes'">Yes</ion-radio>
+                <ion-radio ng-model="Sale.choice" ng-value="'No'">No</ion-radio>
+            </ion-list>-->
+
+
+
+
+
+                <ion-checkbox required name="isChecked" ng-model="isChecked">I agree to the Terms & Conditions</ion-checkbox>
+                <div class="error-container last-error-container" ng-show="authorizationForm.isChecked.$error && authorizationForm.$submitted" ng-messages="authorizationForm.isChecked.$error">
+                    <div class="error" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        This field is required!
+                    </div>
+
+                </div>
+            </div>
+
+            <button name="submit" class="button button-block button-energized" type="submit">
+                Save Detail
+            </button>
+
+        </form>
+
+
+
+
+    </ion-content>
+
+
+
+</ion-view>
+<style>
+    #login-content {
+        background: #41B1C8;
+    }
+</style>

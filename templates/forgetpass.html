@@ -1,0 +1,43 @@
+<ion-view view-title="Recover Password">
+    <ion-content class="padding" style="margin-top:50px;">
+        <form name="authorizationForm" novalidate="" ng-submit="forgetpass(authorizationForm)">
+
+
+            <label style="border-radius: 5px;" class="item item-input">
+                <input id="username" name="username" type="email" ng-model="forget" required placeholder="Please enter your email address">
+            </label>
+            <div class="error-container" ng-show="authorizationForm.username.$error && authorizationForm.$submitted" ng-messages="authorizationForm.username.$error">
+                <div class="error" ng-message="required">
+                    <i class="ion-information-circled"></i>
+                    This field is required!
+                </div>
+                <div class="error" ng-message="email">
+                    <i class="ion-information-circled"></i>
+                    This field must be a valid email address!
+                </div>
+            </div><button type="submit" class="button button-block button-energized">
+                Continue
+            </button>
+            <p style="text-align: left ;text-decoration:none; color: #FFC900; font-weight: 100;">
+                We'll send you the link to reset
+                your password.
+            </p>
+        </form>
+
+    </ion-content>
+    <div class="tabs tabs-icon-top">
+        <a ui-sref="login" class="tab-item">
+            <i class="icon ion-person-stalker"></i>
+            Login
+        </a>
+        <a href="#/register" class="tab-item">
+            <i class="icon ion-android-contact"></i>
+            Register
+        </a>
+    </div>
+</ion-view>
+<style>
+    #login-content {
+        background: #41B1C8;
+    }
+</style>

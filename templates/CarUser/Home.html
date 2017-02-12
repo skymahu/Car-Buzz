@@ -1,0 +1,101 @@
+﻿<ion-view view-title="Home" ng-init="NotificationListCount()">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon button-clear ion-navicon"></button>
+    </ion-nav-buttons>
+
+
+
+    <ion-content class="padding" style="background-color:#292526;margin-bottom:0px !important;">
+        <div class="text-center" style="margin-top:50px;">
+            <img src="img/logo1.png">
+        </div> <br />
+        <a href="#/app/sale" class="button button-block button-assertive">
+            <i class="icon ion-android-bus"></i>
+            Selling
+        </a>
+        <a href="#/app/purchase" class="button button-block button-assertive">
+            <i class="icon ion-android-contact"></i>
+            Purchase
+        </a>
+        <a href="#/app/exchange" class="button button-block button-assertive">
+            <i class="icon ion-android-drafts"></i>
+            Exchange
+        </a>
+
+    </ion-content>
+
+    <div class="tabs tabs-icon-top">
+        <!--<a ui-sref="app.team" class="tab-item">
+            <i class="icon ion-person-stalker"></i>
+            Team
+        </a>
+        <a href="#/app/profile" class="tab-item">
+            <i class="icon ion-android-contact"></i>
+            Profile
+        </a>
+        <a href="#/app/chats" class="tab-item">
+            <i class="icon ion-chatbox-working"></i>
+            Share
+        </a>-->
+    </div>
+
+</ion-view>
+
+<style>
+    .vertical-center {
+        min-height: 100%;
+        /* Fallback for vh unit */
+        min-height: 30vh;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        /* Align the bootstrap's container vertically */
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    .abs {
+        position: relative;
+    }
+
+        .abs span.badge {
+            position: absolute;
+            top: -1.5em;
+            right: .5em;
+            background-color: #a00;
+        }
+
+
+        .abs span.badge1 {
+            position: absolute;
+            top: 0.1em;
+            right: -0.5em;
+            background-color: #a00;
+        }
+
+    .badge1 {
+        display: inline-block;
+        min-width: 10px;
+        padding: 3px 7px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1;
+        vertical-align: middle;
+        white-space: nowrap;
+        text-align: center;
+        background-color: #777;
+        border-radius: 10px;
+    }
+</style>

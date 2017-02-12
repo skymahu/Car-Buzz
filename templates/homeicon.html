@@ -1,0 +1,41 @@
+<div class="btn-group pull-right" ng-controller="TeamController">
+  
+    <a ui-turn-on="myDropdown1" class="btn">
+      
+        <i class="fa fa-ellipsis-v"></i>
+        <i class="fa fa-ellipsis-v"></i>
+        <i class="fa fa-ellipsis-v"></i>
+        <i class="btn abs ng-scope" popover-append-to-body="true" popover-placement="bottom" uib-popover-template="templateUrl"><ng-alerts-count badge="true" hide-empty="true"><span ng-class="{'badge': badge}" class="ng-binding badge">{{NoticeList.length}}</span> </i>
+    </a>
+    <ul ui-state="myDropdown1" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown1')" 
+    ui-outer-click-if="Ui.active('myDropdown1')"
+    role="menu" ui-show="myDropdown1" ui-turn-off="myDropdown1">
+        
+      
+        <a class="btn abs ng-scope" ui-sref="notification" popover-append-to-body="true" popover-placement="bottom" uib-popover-template="templateUrl" style="text-transform:none;"> Notification<ng-alerts-count badge="true" hide-empty="true" ng-click="ViewNotice(user.Id)"><span ng-class="{'badge': badge1}" class="ng-binding badge1">{{NoticeList.length}}</span>
+</ng-alerts-count></a>
+          <li><a ui-sref="login">Log Out</a></li>
+         
+    </ul>
+</div>
+<!--<button class="btn abs ng-scope" href="#" popover-append-to-body="true" popover-placement="bottom" uib-popover-template="templateUrl">Notification<ng-alerts-count badge="true" hide-empty="true"><span ng-class="{'badge': badge}" class="ng-binding badge">1</span>
+</ng-alerts-count></button>-->
+
+
+
+
+
+
+<!--<div class="btn-group pull-right">
+    <a ui-turn-on="myDropdown1" class="btn">
+        <i class="fa fa-ellipsis-v"></i>
+        <i class="fa fa-ellipsis-v"></i>
+        <i class="fa fa-ellipsis-v"></i>
+    </a>
+    <ul ui-state="myDropdown1" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown1')" 
+    ui-outer-click-if="Ui.active('myDropdown1')"
+    role="menu" ui-show="myDropdown1" ui-turn-off="myDropdown1">
+        
+        <li><a ui-sref="login">Log Out</a></li>
+    </ul>
+</div>-->
